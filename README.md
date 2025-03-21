@@ -19,7 +19,7 @@ Bu projede bootcamp tarafından temel metro ağı yapısı (`Istasyon` ve `Metro
    - `en_az_aktarma_bul`: BFS kullanarak en az aktarmalı rotayı bulan fonksiyon
    - `en_hizli_rota_bul`: A* algoritması kullanarak en hızlı rotayı bulan fonksiyon
 
-2. `metro_simulation.py` dosyası (algoritmanın geliştirilmiş versiyonu)
+2. `metro_simulation.py` dosyası ( projedeki algoritmanın geliştirilmiş versiyonunu içerir)
    - Burada özellikle `en_az_aktarma_bul` fonksiyonunu BFS yerine Dijkstra tabanlı bir yaklaşımla yeniden düzenledim
 
 3. Görselleştirme modülü ve arayüzün tamamı:
@@ -31,7 +31,7 @@ Bu projede bootcamp tarafından temel metro ağı yapısı (`Istasyon` ve `Metro
 ## Algoritmaların Çalışma Mantığı
 
 ### BFS (Breadth-First Search) Algoritması
-İlk olarak en az aktarmalı rotayı bulmak için BFS algoritması kullandım (`SarpCanKaraman_MetroSimulation.py`). Bu algoritma en kısa yolu bulmak için tüm komşu düğümleri eşit seviyede ziyaret eder. Ancak testler sırasında, özellikle Mavi Hattaki Gar durağından Kırmızı Hattaki Demetevler durağına giderken BFS'in beklediğim en az aktarmalı rotayı bulamadığını fark ettim. BFS sadece en kısa düğüm sayısını bulduğu için, hat değişimlerini (aktarmaları) özel olarak değerlendirmiyordu.
+İlk olarak en az aktarmalı rotayı bulmak için BFS algoritması kullandım (`SarpCanKaraman_MetroSimulation.py`). Bu algoritma en kısa yolu bulmak için tüm komşu düğümleri eşit seviyede ziyaret eder. Ancak testler sırasında (özellikle Mavi Hattaki Gar durağından Kırmızı Hattaki Demetevler durağına giderken) BFS'in beklediğim en az aktarmalı rotayı bulamadığını fark ettim. BFS sadece en kısa düğüm sayısını bulduğu için, hat değişimlerini (aktarmaları) özel olarak değerlendirmiyordu.
 
 ### Dijkstra Modifikasyonu (metro_simulation.py)
 Bu problemi çözmek için, `metro_simulation.py` dosyasında `en_az_aktarma_bul` fonksiyonunu Dijkstra algoritması kullanarak yeniden tasarladım. Bu versiyonda hat değişimlerine çok yüksek maliyetler atayarak (1000 birim) öncelikle aktarma sayısını, daha sonra istasyon sayısını minimize eden bir çözüm geliştirdim.
@@ -46,8 +46,6 @@ Proje yaklaşık bir hafta sürdü ve birkaç zorluğu aşmam gerekti:
 1. **Algoritma Problemi**: BFS'in bazı durumlarda beklenen en az aktarmalı rotayı bulamaması sorunu, algoritmaları daha derin anlamamı gerektirdi. Dijkstra algoritmasını bu probleme özel olarak modifiye etmek, algoritma bilgimi pekiştirdi.
 
 2. **Görselleştirme Zorlukları**: Metro ağını görsel olarak anlamlı bir şekilde sunmak, istasyonları doğru konumlandırmak (özellikle aktarma noktalarını) ve hat renklerini yönetmek için kapsamlı bir çalışma gerekti.
-
-3. **Animasyon Sistemi**: Rota animasyonunu doğru şekilde oluşturmak için istasyonlar arası ara noktaları hesaplama ve zamanlama yapmak zorlu bir süreçti.
 
 ## Proje Özellikleri
 
@@ -65,11 +63,9 @@ Proje yaklaşık bir hafta sürdü ve birkaç zorluğu aşmam gerekti:
 - İnteraktif istasyon seçimi
 
 ### Projeden Görüntüler
-- 
-
--
- 
-- 
+- ![Arayüz](./images/arayüz.png)
+- ![En_Hızlı_Rota](./images/en_hızlı.gif)
+- ![En_Az_Aktarma](./images/en_az.gif)
 
 ## Projenin Çalıştırılması
 
