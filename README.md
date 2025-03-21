@@ -41,7 +41,7 @@ En hızlı rotayı bulmak için A* algoritmasını kullandım. Bu algoritma, hed
 
 ## Geliştirme Süreci ve Zorluklar
 
-Proje yaklaşık bir hafta sürdü ve birkaç zorluğu aşmam gerekti:
+Proje yaklaşık iki hafta sürdü ve birkaç zorluğu aşmam gerekti:
 
 1. **Algoritma Problemi**: BFS'in bazı durumlarda beklenen en az aktarmalı rotayı bulamaması sorunu, algoritmaları daha derin anlamamı gerektirdi. Dijkstra algoritmasını bu probleme özel olarak modifiye etmek, algoritma bilgimi pekiştirdi.
 
